@@ -1,0 +1,18 @@
+Draft.txt
+
+# 目的
+
+# 仕様
+* 日本語、英語2カ国語対応
+
+# 構成
+* MBaaSとは何か?
+* Microsoft Azureとは何か?
+* Githubへリンク
+* Libraryの使い方
+* モバイルサービス機能対応表
+
+# 伝えたいゴール
+Microsoft AzureのMBaaS(Mobile Backend as a Service)は、スマートフォンアプリ開発で必要となる汎用的なAPI集です。サーバ側のコードを書く事無く、手早くアプリケーション制作が行えます。Android / iOS / WindowsPhone などの開発では、MBaaSを有効活用する事で、効率的に開発が可能です。
+しかし、Firefox OSでは、様々な点で対応していない部分があります。プッシュ通知などがそうです。当サービスを使えば、Microsoft Azure + Firefox OSでMBaaSが使用できるようになります。(ある程度は)
+ソースコードはGitHub上にオープンソースで公開されています。Firefox OSでアプリケーションを開発するにあたり、このソースコードを使う事で、非常に入出力が楽になります。

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Microsoft Azure Mobile Service Plus Firefox OS</title>
+    <link href="./css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="./css/style.css" type="text/css" rel="stylesheet" />
+    <link href="./src/prettify.css" type="text/css" rel="stylesheet" />
+    <script src="./src/prettify.js" type="text/javascript" ></script>
+    <script src="./src/lang-css.js" type="text/javascript"></script>
+</head>
+<body onload="prettyPrint()">
+    <div id="wrp">
+        <header>
+            <div id="logo">
+                
+                </div>
+                <div id="main_img"><div class="center"><img class="header" src="./img/img_header.png"></div>
+                <h1>MAMS x Firefox OS</h1>
+                </div>
+            </rheader>
+            <main>
+                <div class="black"> 
+                    <section class="black">
+                        <h2>MAMS x Firefox OS</h2>
+                        <p class="column5">
+                            Microsoft Azure Mobile Services (MAMS) is a Mobile Backend as a Service (MBaaS). You can easily develop mobile applications on Firefox OS by using the following features.<br>
+                            <ul>
+                                <li>Store data in SQL Server, Table Storage, and MongoDB.</li>
+                                <li>Single sign-on with Active Directory, Facebook, Twitter, and Google</li>
+                                <li>Push notifications. </li>
+                                <li>and more</li>
+                            </ul>
+                            Firefox OS is a very cool Open Source Software, and the applications are developed by HTML, Javascript and CSS.<br>
+                            "MAMS x Firefox OS" is a client library development project to enable MAMS on Firefox OS envrionment.
+                        </p>
+                        <img id="img02" class="column5" src="./img/img02.png">
+                        <hr>
+                    </section>
+                </div>
+
+                <div class="white">
+                    <section class="white">
+                        <h2>Product</h2>
+                        <p class="column5">
+                            実現できた機能は以下の通り。
+                            <table>
+                                <tr class="ub">
+                                    <th></th><th>Node.js Backend</th><th>C# Backend</th>
+                                </tr>
+                                <tr>
+                                    <td>connect </td><td>X</td><td>O</td>
+                                </tr>
+                                <tr>
+                                    <td>Store data</td><td>X</td><td>O</td>
+                                </tr>
+                                <tr>
+                                    <td>Single sign-on</td><td>X</td><td>X</td>
+                                </tr>
+                                <tr  class="ub">    
+                                     <td>Push Notifications</td><td>X</td><td>X</td>
+                                </tr>
+                            </table>
+                        </p>
+                        <!-- <img id="img04" c lass="column2" src="./img/img04.png"> -->
+                        <hr>
+                    </section>
+
+                    <!-- <div class="black">
+                        <section class="black">
+                            <h2>説明3</h2>
+                            <img id="img03" class="column1" src="./img/img03.png">
+                            <p class="column4">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque commodi sed nostrum saepe, repellendus quia, reiciendis consectetur ullam eligendi ducimus doloremque quod sit nesciunt est libero rem delectus velit architecto natus ipsam reprehenderit blanditiis, accusamus iusto voluptates. Eius alias, perspiciatis culpa magnam. Officiis laudantium velit et repellendus temporibus nulla animi, architecto, exercitationem modi sit, dolore aperiam ipsa cupiditate sint provident sed expedita in atque labore. Error earum unde, veniam vero culpa nostrum ad assumenda optio officia necessitatibus, veritatis, dicta corrupti nam expedita ex itaque debitis tempora corporis. Minus ipsa nemo aut esse. A distinctio nisi deleniti quidem necessitatibus harum ratione.
+                            </p>
+                            <hr>
+                        </section>
+
+                    </div> -->
+
+                    <div class="black">
+                        <section class="black">
+                            <h2>How to use</h2>
+                            <h3>Step1</h3>
+                            <p>Create mobile service project in Visual Studio.</p>
+                            <img src="img/step1.png" />
+                            <h3>Step2</h3>
+                            <p>Install helper library.</p>
+                            <pre>
+                                PM> Install-Package FxOSHelper
+                            </pre>
+                            <h3>Step3</h3>
+                            <p>Edit App_Start\WebApiConfig.cs. The paramater is <a href="https://developer.mozilla.org/ja/Apps/Manifest#origin">origin property of Firefox OS App</a>.</p>
+                            <pre class="prettyprint linenums"><code>
+public static void Register()
+{
+    ConfigOptions options = new ConfigOptions();
+            
+    HttpConfiguration config = ServiceConfig.Initialize(new ConfigBuilder(options));
+    //次の2行を追加
+    config.SetCorsPolicyProviderFactory(new FxOSCorsPolicyFactory("app://fxos.contoso.com"));
+    config.EnableCors();
+
+    Database.SetInitializer(new MobileServiceInitializer());
+}
+        </code>
+    </pre>
+    <h3>Step4</h3>
+                            <p>Let's deploy the project to Azure.</p>
+    <h3>App</h3>
+                            <p><a href="https://github.com/iwate/FxOSTodoSample">this</a> is Firefox OS Apps sample code.</p>
+                            <img src="img/sample.png" />
+</section>
+</div>
+</main>
+<footer>
+    <p class="copyright">
+        Copyright (C) 2015 HackathonMonster(Yoshiyuki Taniguchi) All Rights Reserved.
+    </p>
+</footer>
+</div>
+
+</script>
+</body>
+</html>
